@@ -14,7 +14,7 @@ public class Main {
         double[][] A= m.arrayToMatrix(matrix);
         double[][] matrix2 = {{3,2},{1,0},{1,0},{0,2}};
         double[][] B= m.arrayToMatrix(matrix2);
-        System.out.println(Arrays.deepToString(m.matrixProduct(A, B)));
+        System.out.println(Arrays.deepToString(m.transposedMatrix(A)));
 
     }
 

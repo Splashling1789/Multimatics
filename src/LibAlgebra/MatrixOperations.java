@@ -1,8 +1,6 @@
 package LibAlgebra;
 
 
-import java.util.Arrays;
-
 public class MatrixOperations {
 
     boolean print_errors;
@@ -16,6 +14,7 @@ public class MatrixOperations {
      * @return A two-dimensional array that represents a real matrix
      */
     public double[][] arrayToMatrix(double[][] A) {
+
         double[][] result = new double[A.length][A[0].length];
 
         for(int i = 0; i<A.length; i++)
@@ -40,7 +39,9 @@ public class MatrixOperations {
      * @param B Two-dimensional array that represents a matrix
      * @return The product of AxB, or null if they are not compatible
      */
-    public double[][] matrixProduct(double[][] A, double[][] B) {
+    public double[][] matricesProduct(double[][] A, double[][] B) {
+        A=arrayToMatrix(A);
+        B=arrayToMatrix(B);
         if(A[0].length == B.length) {
             double[][] result = new double[A.length][B[0].length];
             for(int i=0; i<A.length; i++){
@@ -55,7 +56,7 @@ public class MatrixOperations {
             return result;
         }
         else {
-            if(print_errors) System.out.println("ERROR: Matrixes are not compatible");
+            if(print_errors) System.out.println("ERROR: Matrices are not compatible");
             return null;
         }
     }
@@ -65,11 +66,14 @@ public class MatrixOperations {
      * @param A the matrix to check
      * @return true if it is squared
      */
-    public boolean matrixIsSquared(double[][] A) {
+    public boolean matrixIsSquare(double[][] A) {
+        A=arrayToMatrix(A);
         return A.length == A[0].length;
     }
-    //TODO Matrix basic operations
+
     public double[][] matrixAddition(double[][] A, double[][] B) {
+        A=arrayToMatrix(A);
+        B=arrayToMatrix(B);
         if(A.length == B.length && A[0].length == B[0].length){
             double[][] result = new double[A.length][A[0].length];
             for (int i=0; i<A.length; i++){
@@ -80,12 +84,77 @@ public class MatrixOperations {
             return result;
         }
         else {
-            if(print_errors) System.out.println("ERROR: Matrixes are not compatible");
+            if(print_errors) System.out.println("ERROR: Matrices are not compatible");
             return null;
         }
-
     }
-    //TODO Matrix determinants
+    public double[][] negativeMatrix(double[][] A) {
+        A=arrayToMatrix(A);
+        double[][] result= new double[A.length][A[0].length];
+        for(int i=0; i<A.length; i++){
+            for(int j=0; j<A[0].length; j++){
+                result[i][j]= -A[i][j];
+            }
+        }
+        return result;
+    }
+
+    public double[][] matrixNumberProduct(double a, double[][] A){
+        A=arrayToMatrix(A);
+        double[][] result= new double[A.length][A[0].length];
+        for(int i=0; i<A.length; i++){
+            for(int j=0; j<A[0].length; j++){
+                result[i][j]= a*A[i][j];
+            }
+        }
+        return result;
+    }
+    public double matrixDeterminant(double[][] A) {
+        A= arrayToMatrix(A);
+        if (matrixIsSquare(A)) {
+            if (A.length==1) return A[0][0];
+            if (A.length==2) return A[0][0] * A[1][1] - A[0][1] * A[1][0];
+            else if(A.length==3) return A[0][0]*A[1][1]*A[2][2] + A[0][1]*A[1][2]*A[2][0] + A[0][2]*A[1][0]*A[2][1] - A[0][2]*A[1][1]*A[2][0] - A[0][1]*A[1][0]*A[2][2] - A[0][0]*A[1][2]*A[2][1];
+            else {
+                //TODO Matrix determinant of superior order
+                if(print_errors) System.out.println("WARN: Superior order determinants are not defined yet");
+                return 0;
+            }
+        }
+        else{
+            if (print_errors) System.out.println("ERROR: Matrix is not compatible");
+            return 0;
+        }
+    }
+
+    public boolean matrixIsInvertible(double[][] A) {
+        A= arrayToMatrix(A);
+        return (matrixIsSquare(A) && matrixDeterminant(A)!=0);
+    }
 
     //TODO Inverse matrix
+
+    public double[][] transposedMatrix(double[][] A) {
+        A=arrayToMatrix(A);
+        double[][] result= new double[A[0].length][A.length];
+        for(int i=0; i<A.length; i++){
+            for(int j=0; j<A[0].length; j++){
+                result[j][i]= A[i][j];
+            }
+        }
+        return result;
+    }
+
+    //TODO Adjugate, and adjugate matrix
+    /*
+    public double adjugate(int row, int column, double[][] A) {
+
+    }
+
+    public double[][] adjugateMatrix(double[][] A) {
+        A=arrayToMatrix(A);
+
+    }
+     */
+
 }
