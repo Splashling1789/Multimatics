@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b2ed76a-6fd3-4791-b86d-36b9d18c9620" name="Changes" comment="Initial commit">
+    <list default="true" id="4b2ed76a-6fd3-4791-b86d-36b9d18c9620" name="Changes" comment="MatrixOperations modified">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LibAlgebra/MatrixOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibAlgebra/MatrixOperations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +68,9 @@
       <workItem from="1665313686122" duration="61000" />
       <workItem from="1665842168698" duration="5870000" />
       <workItem from="1665853239180" duration="3470000" />
-      <workItem from="1665943546443" duration="57000" />
+      <workItem from="1665943546443" duration="132000" />
+      <workItem from="1667126397667" duration="1582000" />
+      <workItem from="1667153571451" duration="279000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1665846910427</created>
@@ -78,7 +79,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665846910427</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="MatrixOperations modified">
+      <created>1665943666166</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1665943666166</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -89,7 +97,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -97,6 +117,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="MatrixOperations modified" />
+    <option name="LAST_COMMIT_MESSAGE" value="MatrixOperations modified" />
   </component>
 </project>

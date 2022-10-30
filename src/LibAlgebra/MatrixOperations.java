@@ -1,6 +1,10 @@
 package LibAlgebra;
 
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class MatrixOperations {
 
     boolean print_errors;
@@ -146,9 +150,33 @@ public class MatrixOperations {
     }
 
     //TODO Adjugate, and adjugate matrix
-    /*
-    public double adjugate(int row, int column, double[][] A) {
+/*
+    public double adjugateElement(int row, int column, double[][] A) {
+        A=arrayToMatrix(A);
+        if(A.length < row || A[0].length < column) {
+            if (print_errors) System.out.println("ERROR: row or column index out of range");
+            return 0;
+        }
+        else if(!matrixIsSquare(A)){
+            if (print_errors) System.out.println("ERROR: Matrix not compatible");
+            return 0;
+        }
+        else {
+            ArrayList<Double> listedMatrix = new ArrayList<Double>();
+            double[][] matrix = new double[A.length][A[0].length];
+            for (int i=0; i<A.length; i++) {
+                for (int j=0; i<A[0].length; j++) {
+                    if (i+1 != row && j+1 !=column) {
+                        listedMatrix.add(A[i][j]);
 
+                    }
+                }
+            }
+            for (int i=0; i<listedMatrix.size(); i++) {
+
+            }
+
+        }
     }
 
     public double[][] adjugateMatrix(double[][] A) {
